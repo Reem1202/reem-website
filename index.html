@@ -373,6 +373,21 @@
         </div>
       </div>
     </section>
+    <section id="queries">
+      <div class="feedback">
+        <h1 class="title"> Your Feedback</h1>
+        <form name="submit-to-google-sheet">
+          <input type="text" name="Name" placeholder="Your Name" required>
+          <input type="email" name="Email" placeholder="Your E-mail" required>
+          <input type="number" name="Phone number" placeholder="Your Phone Number" required>
+          <textarea  name="Message" rows="6" placeholder="Yor Message"></textarea>
+          
+            <button type="submit" class="btn btn-color-2 ">Submit</button>
+
+        </form>
+        <span id="msg"></span>
+      </div>
+    </section>
     <footer>
       <nav>
         <div class="nav-links-container">
@@ -388,5 +403,22 @@
       <p>Copyright &#169; 2023 Reem. All Rights Reserved.</p>
     </footer>
     <script src="script.js"></script>
+    <script>
+      const scriptURL = 'https://script.google.com/macros/s/AKfycbydxwQIZ9lXgDKMMAkRxbXCpFFEQUxoKZsTEYSfroQS8aSxjpK2i1NuPrzkySvdP2tCGQ/exec'
+      const form = document.forms['submit-to-google-sheet']
+    const msg=document.getElementById("msg")
+      form.addEventListener('submit', e => {
+        e.preventDefault()
+        fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+          .then(response => {
+            msg.innerHTML="Message sent successfully"
+            setTimeout(function(){
+              msg.innerHTML=""
+            },2500)
+            form.reset()
+          })
+          .catch(error => console.error('Error!', error.message))
+      })
+    </script>
   </body>
 </html>

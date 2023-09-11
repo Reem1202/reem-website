@@ -419,6 +419,49 @@ article .icon {
 .email-icon {
   height: 2.5rem;
 }
+.contact-right form{
+  width: 100%;
+ 
+}
+form input{
+  width: 20%;
+  background: #fff;
+  padding: 5px;
+  margin: 50px;
+  color:#262626;
+  font-size:18px ;
+  border-radius: 10px;
+  margin-top: 10px;
+  display: inline;
+ 
+}
+form textarea{
+  
+  width: 50%;
+  border-radius: 10px;
+  font-size: 18px;
+  background-color: #fff;
+  color: #262626;
+  margin: 20px ;
+  padding: 5px;
+  margin-left: 250px;
+  margin-top: -5px;
+  margin-bottom: 50px;
+
+}
+form .btn-color-2{
+  padding:14px ;
+margin-top: 100px;
+ display: inline-block;
+  position: absolute;
+  
+}
+#msg{
+  color: #61b752;
+  margin-top: -40px;
+  display: block;
+  align-items: center;
+}
 
 /* FOOTER SECTION */
 
