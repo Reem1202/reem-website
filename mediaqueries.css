@@ -100,4 +100,15 @@
     .text-container {
       text-align: justify;
     }
+    #queries{
+      height: 83vh;
+    }
+    form textarea{
+     
+      flex-basis: 100%;
+      margin-top: auto;
+      padding-inline-start: ;
+    }
+    
+  
   }

@@ -7,6 +7,7 @@
     <title>My Portfolio</title>
     <link rel="stylesheet" href="style.css" />
     <link rel="stylesheet" href="mediaqueries.css" />
+    <script src="https://kit.fontawesome.com/87de38895a.js" crossorigin="anonymous"></script>
   </head>
   <body>
     <nav id="desktop-nav">
@@ -45,7 +46,7 @@
       <div class="section__text">
         <p class="section__text__p1">Hey there, I'm</p>
         <h1 class="title">Reem Ali Akbar</h1>
-        <p class="section__text__p2">Brocamp Student</p>
+        <p class="section__text__p2">BCA Graduate</p>
         <div class="btn-container">
           <button
             class="btn btn-color-2"
@@ -282,13 +283,13 @@
             <div class="btn-container">
               <button
                 class="btn btn-color-2 project-btn"
-                onclick="location.href='https://github.com/'"
+                onclick="location.href='https://reem1202.github.io/LinkedIN/'"
               >
                 Github
               </button>
               <button
                 class="btn btn-color-2 project-btn"
-                onclick="location.href='https://github.com/'"
+                onclick="location.href=' https://reem1202.github.io/LinkedIN/'"
               >
                 Live Demo
               </button>
@@ -306,13 +307,13 @@
             <div class="btn-container">
               <button
                 class="btn btn-color-2 project-btn"
-                onclick="location.href='https://github.com/'"
+                onclick="location.href=' https://reem1202.github.io/FACEBOOK/'"
               >
                 Github
               </button>
               <button
                 class="btn btn-color-2 project-btn"
-                onclick="location.href='https://github.com/'"
+                onclick="location.href=' https://reem1202.github.io/FACEBOOK/'"
               >
                 Live Demo
               </button>
@@ -370,22 +371,66 @@
             class="icon contact-icon"
           />
           <p><a href="https://www.linkedin.com/in/reemaliakbar">LinkedIn</a></p>
-        </div>
+          
+        
+        <div class="social media">
+          
+          
+       
+      <img
+        src="github.webp"
+        alt="My Github profile"
+        class="icon"
+        onclick="location.href='https://github.com/Reem1202/'"
+      />
+      <img
+        src="instagram.webp"
+        alt="My Instagram profile"
+        class="icon"
+        onclick="location.href='https://instagram.com/_gazell.e_/'"
+      />
+      <img
+        src="pinterest.webp"
+        alt="My Pinterest profile"
+        class="icon"
+        onclick="location.href='https://pinterest.com/'"
+      />
       </div>
+    </span>
+    </div>
+    </div>
     </section>
     <section id="queries">
       <div class="feedback">
         <h1 class="title"> Your Feedback</h1>
-        <form name="submit-to-google-sheet">
-          <input type="text" name="Name" placeholder="Your Name" required>
-          <input type="email" name="Email" placeholder="Your E-mail" required>
-          <input type="number" name="Phone number" placeholder="Your Phone Number" required>
-          <textarea  name="Message" rows="6" placeholder="Yor Message"></textarea>
-          
-            <button type="submit" class="btn btn-color-2 ">Submit</button>
+       <form name="submit-to-google-sheet">
 
-        </form>
-        <span id="msg"></span>
+        <div class="input-group">
+          <label>Full Name</label>
+          <input type="text" placeholder="Enter your name" name="Full Name" id="contact-name" onkeyup="validateName()">
+          <span id="name-error"></span>
+        </div>
+        <div class="input-group">
+          <label>Phone number</label>
+          <input type="tel" placeholder="123 456 7890" name="Phone number"id="contact-phone" onkeyup="validatePhone()">
+          <span id="phone-error"></span>
+        </div>
+        <div class="input-group">
+          <label>Email id</label>
+          <input type="email" placeholder="Enter email" name="Email id" id="contact-email" onkeyup="validateEmail()">
+          <span id="email-error"></span>
+        </div>
+        <div class="input-group">
+          <label>Your message</label>
+         <textarea rows="5" placeholder="Enter your message" name="Your message"id="contact-message" onkeyup="validateMessage()">
+        </textarea>
+         <span id="message-error"></span>
+        </div>
+        <button onclick="return validateForm()">Submit</button>
+        <span id="submit-error"></span>
+       </form>
+        <span id="msg">hello</span>
+        
       </div>
     </section>
     <footer>
@@ -404,17 +449,17 @@
     </footer>
     <script src="script.js"></script>
     <script>
-      const scriptURL = 'https://script.google.com/macros/s/AKfycbydxwQIZ9lXgDKMMAkRxbXCpFFEQUxoKZsTEYSfroQS8aSxjpK2i1NuPrzkySvdP2tCGQ/exec'
+      const scriptURL = 'https://script.google.com/macros/s/AKfycbxOaBmjynb4iP-_Cyqjbd59yWe4mdkVAIvRS_PgrGyWge2cCFl3woRcKo2YuH6-mz1Y/exec'
       const form = document.forms['submit-to-google-sheet']
     const msg=document.getElementById("msg")
       form.addEventListener('submit', e => {
         e.preventDefault()
         fetch(scriptURL, { method: 'POST', body: new FormData(form)})
           .then(response => {
-            msg.innerHTML="Message sent successfully"
+            msg.innerHTML = "Message sent succesfully"
             setTimeout(function(){
-              msg.innerHTML=""
-            },2500)
+              msg.innerHTML = ""
+            },5000)
             form.reset()
           })
           .catch(error => console.error('Error!', error.message))

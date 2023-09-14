@@ -423,46 +423,93 @@ article .icon {
   width: 100%;
  
 }
-form input{
-  width: 20%;
-  background: #fff;
-  padding: 5px;
-  margin: 50px;
-  color:#262626;
-  font-size:18px ;
-  border-radius: 10px;
-  margin-top: 10px;
-  display: inline;
+#social-con{
+margin-right: 10px;
+margin-top: 50px;
+margin-bottom: 50px;
+}
+#social-con img ::after{
+  align-items: center;
+  display: inline-block;
  
 }
-form textarea{
-  
-  width: 50%;
-  border-radius: 10px;
-  font-size: 18px;
-  background-color: #fff;
-  color: #262626;
+#queries{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.feedback form{
+  width: 90%;
+ max-width: 500px;
+  padding: 50px 30px 20px;
+  background: #fff;
+  border-radius: 4px;
+  box-shadow: 0 4px 30px rgba(0,0,0,0.5);
+  position: relative;
+  height: 525px;
+}
+.input-group {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  margin: 10px 0;
+  position: relative;
+}
+.input-group label{
+  flex-basis: 28%;
+}
+.input-group textarea, .input-group input{
+  flex-basis: 68%;
+  border: 0;
+  font-size: 16px;
+  background: transparent;
+  color: #333;
   margin: 20px ;
-  padding: 5px;
-  margin-left: 250px;
-  margin-top: -5px;
-  margin-bottom: 50px;
+  padding: 10px 0;
+  outline: 0;
+  border-bottom: 1px solid #999;
+  border-radius: 4px;
 
 }
-form .btn-color-2{
-  padding:14px ;
-margin-top: 100px;
- display: inline-block;
-  position: absolute;
+::placeholder{
+  font-size: 14px;
+}
+form button{
+  padding:15px 40px ;
+margin-top: 25px;
+  background-color: rgb(27, 26, 26);
+  color: #fff;
+  border-radius: 20px;
+  border: 1px solid rgba(255,255,255,0.7);
+  outline: 0;
+  margin-left: 100px;
   
+}
+form button:hover{
+  cursor: pointer;
+  background-color: darkgoldenrod;
+}
+
+.input-group span{
+  position: absolute;
+  bottom: 30px;
+  right: 19px;
+  font-size: 14px;
+  color: red;
+}
+#submit-error{
+  color: red;
+}
+.input-group span i{
+  color: seagreen;
 }
 #msg{
   color: #61b752;
   margin-top: -40px;
   display: block;
-  align-items: center;
-}
 
+}
 /* FOOTER SECTION */
 
 footer {
